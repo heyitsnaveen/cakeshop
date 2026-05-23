@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja Homemade Cakes - Artisanal Bakery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #26170c;
+            --color-secondary: #3d2b1f;
+            --color-accent: #f8d8db;
+            --color-light: #fbf9f4;
+            --color-bg: #f5f3ee;
+            --color-text: #4f453f;
+            --color-border: #d2c4bc;
+            --color-success: #25d366;
+            --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-primary);
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ HEADER & NAVIGATION ============ */
+        .promo-banner {
+            background: var(--color-secondary);
+            color: #ac9181;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 0.7px;
+        }
+
+        header {
+            background: rgba(251, 249, 244, 0.8);
+            backdrop-filter: blur(6px);
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--color-primary);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 16px;
+            transition: var(--transition);
+            padding-bottom: 6px;
+        }
+
+        .nav-links a:first-child {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .order-btn {
+            background: var(--color-secondary);
+            color: #ac9181;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 15px 40px rgba(61, 43, 31, 0.15);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f3ee 100%);
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 60px 64px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -200px;
+            width: 800px;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800') center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 672px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #755d5f;
+            padding: 4px 16px;
+            border-radius: 9999px;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 500;
+            color: var(--color-primary);
+            margin: 24px 0;
+            line-height: 1.1;
+            letter-spacing: -1.28px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--color-text);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 17.5px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--color-secondary);
+            color: white;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 15px 40px rgba(61, 43, 31, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-light);
+        }
+
+        /* ============ TRUST BADGES ============ */
+        .trust-badges {
+            background: var(--color-bg);
+            padding: 64px;
+            border-top: 1px solid rgba(210, 196, 188, 0.3);
+            border-bottom: 1px solid rgba(210, 196, 188, 0.3);
+        }
+
+        .badges-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .badge-text {
+            font-size: 16px;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* ============ FEATURED CAKES SECTION ============ */
+        .section {
+            padding: 120px 64px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--color-text);
+            max-width: 576px;
+            margin: 0 auto;
+        }
+
+        .cakes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .cake-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+            transition: var(--transition);
+        }
+
+        .cake-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 15px 40px rgba(61, 43, 31, 0.15);
+        }
+
+        .cake-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f3ee 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cake-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cake-price {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(251, 249, 244, 0.9);
+            color: var(--color-primary);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cake-content {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .cake-name {
+            font-size: 24px;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .cake-description {
+            font-size: 16px;
+            color: var(--color-text);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .cake-action {
+            border: none;
+            background: none;
+            color: var(--color-primary);
+            border-bottom: 2px solid rgba(38, 23, 12, 0.2);
+            padding: 6px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .cake-action:hover {
+            border-bottom-color: var(--color-primary);
+        }
+
+        /* ============ WHY CHOOSE US ============ */
+        .why-choose {
+            background: #f0eee9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--color-light);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-accent);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            color: var(--color-primary);
+            margin: 16px 0;
+            font-weight: 500;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* ============ CUSTOM ORDER FORM ============ */
+        .form-section {
+            background: var(--color-light);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+            margin: 120px 64px;
+            max-width: calc(100% - 128px);
+        }
+
+        .form-image {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f3ee 100%);
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(38, 23, 12, 0.2);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-overlay-content {
+            background: rgba(38, 23, 12, 0.4);
+            backdrop-filter: blur(6px);
+            padding: 32px;
+            border-radius: 16px;
+            color: white;
+            text-align: center;
+            max-width: 452px;
+        }
+
+        .form-overlay-content h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .form-overlay-content p {
+            font-size: 16px;
+            color: white;
+        }
+
+        .form-container {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--color-primary);
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 12px;
+            border: none;
+            border-radius: 8px;
+            background: var(--color-light);
+            color: #1b1c19;
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: 2px solid var(--color-secondary);
+            outline-offset: 2px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-submit {
+            background: var(--color-secondary);
+            color: #ac9181;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+            margin-top: 24px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 15px 40px rgba(61, 43, 31, 0.15);
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials {
+            background: rgba(112, 88, 91, 0.05);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .testimonial-card {
+            background: var(--color-light);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star {
+            color: #ffc107;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--color-text);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* ============ GALLERY ============ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            background: #eae8e3;
+        }
+
+        .faq-container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 120px 64px;
+        }
+
+        .faq-item {
+            background: var(--color-light);
+            border: 1px solid rgba(210, 196, 188, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-secondary);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-primary);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .faq-toggle {
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--color-text);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 16px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* ============ FLOATING WHATSAPP ============ */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 64px;
+            height: 64px;
+            background: var(--color-success);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0px 10px 30px rgba(61, 43, 31, 0.08);
+            transition: var(--transition);
+            text-decoration: none;
+            color: white;
+            z-index: 50;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 15px 40px rgba(37, 211, 102, 0.25);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--color-bg);
+            border-top: 1px solid rgba(210, 196, 188, 0.3);
+            padding: 120px 64px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            color: var(--color-primary);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 16px;
+            color: var(--color-text);
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(210, 196, 188, 0.3);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--color-text);
+            letter-spacing: 0.7px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: var(--transition);
+            letter-spacing: 0.7px;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 12px 24px;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 40px 24px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section {
+                padding: 80px 24px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .badges-container {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .form-section {
+                grid-template-columns: 1fr;
+                margin: 80px 24px;
+                max-width: calc(100% - 48px);
+            }
+
+            .form-image {
+                min-height: 300px;
+            }
+
+            .form-container {
+                padding: 32px 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cakes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-container {
+                padding: 80px 24px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .trust-badges {
+                padding: 40px 24px;
+            }
+
+            .promo-banner {
+                padding: 6px 24px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 60px 16px;
+            }
+
+            .form-container {
+                padding: 24px 16px;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 30px 16px;
+            }
+
+            .whatsapp-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--color-success);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 30px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(400px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .success-message.hide {
+            animation: slideOut 0.3s ease-out;
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(400px);
+            }
+        }
+
+        .loading {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner">Get 10% OFF on First Order • Use code SWEET10</div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Raja Homemade Cakes</div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#cakes">View Cakes</a>
+                <a href="#custom">Custom Orders</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="order-btn" onclick="document.getElementById('custom').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">🎂 Artisanal Bakery</div>
+            <h1>Handcrafted Cakes Made With Love</h1>
+            <p>Indulge in our exquisite collection of cakes, baked daily with the finest ingredients and decorated with artistic precision.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('cakes').scrollIntoView({ behavior: 'smooth' });">Explore Collection</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('custom').scrollIntoView({ behavior: 'smooth' });">Custom Design</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="badges-container">
+            <div class="badge">
+                <div class="badge-icon">✨</div>
+                <div class="badge-text">Freshly Baked Daily</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">⭐</div>
+                <div class="badge-text">Premium Ingredients</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🎨</div>
+                <div class="badge-text">Custom Artisanship</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🚚</div>
+                <div class="badge-text">Safe Local Delivery</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cakes Section -->
+    <section class="section" id="cakes">
+        <div class="section-header">
+            <h2>Our Featured Creations</h2>
+            <p class="section-subtitle">From intimate celebrations to grand events, find the perfect centerpiece for your special moments.</p>
+        </div>
+        <div class="cakes-grid">
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Birthday Cake">
+                    <div class="cake-price">$45.00</div>
+                </div>
+                <div class="cake-content">
+                    <h3 class="cake-name">Classic Birthday</h3>
+                    <p class="cake-description">Velvety pink cream with macarons and fresh berries.</p>
+                    <button class="cake-action">Select Options</button>
+                </div>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Wedding Cake">
+                    <div class="cake-price">From $250.00</div>
+                </div>
+                <div class="cake-content">
+                    <h3 class="cake-name">Gold Leaf Wedding</h3>
+                    <p class="cake-description">Elegant tiers with edible gold leaf and silk roses.</p>
+                    <button class="cake-action">Consultation</button>
+                </div>
+            </div>
+
+            <div class="cake-card">
+                <div class="cake-image">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Kids Cake">
+                    <div class="cake-price">$65.00</div>
+                </div>
+                <div class="cake-content">
+                    <h3 class="cake-name">Woodland Friends</h3>
+                    <p class="cake-description">Adorable handcrafted figurines for magical birthdays.</p>
+                    <button class="cake-action">Personalize</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-choose">
+        <div class="section-header">
+            <h2 style="text-align: center;">Why Choose Us</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🥄</div>
+                <h3 class="feature-title">Fresh Ingredients</h3>
+                <p class="feature-text">Sourced daily from local organic farmers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Same Day Delivery</h3>
+                <p class="feature-text">Carefully delivered to your doorstep.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Custom Designs</h3>
+                <p class="feature-text">Your vision, our artistic execution.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3 class="feature-title">1000+ Happy Customers</h3>
+                <p class="feature-text">A community built on sweet memories.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order Form -->
+    <section class="form-section" id="custom">
+        <div class="form-image">
+            <div class="form-overlay">
+                <div class="form-overlay-content">
+                    <h2>Design Your Dream Cake</h2>
+                    <p>Tell us about your vision. Our master bakers will work with you to create something truly extraordinary.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <form id="enquiryForm" onsubmit="submitForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cake Type</label>
+                        <select id="cakeType" name="cakeType" required>
+                            <option value="">Select a cake type</option>
+                            <option value="Birthday">Birthday Cake</option>
+                            <option value="Wedding">Wedding Cake</option>
+                            <option value="Anniversary">Anniversary Cake</option>
+                            <option value="Custom">Custom Design</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Requested Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message & Custom Details</label>
+                    <textarea id="message" name="message" placeholder="Tell us about the flavor, colors, and design..." required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="section-header">
+            <h2>Raja Homemade Stories</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-text">"The wedding cake was absolutely breathtaking. Not only was it beautiful, but it was also the most delicious cake we've ever had!"</p>
+                <p class="testimonial-author">— Sarah Miller</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-text">"Ordered a custom bear cake for my daughter's first birthday. It exceeded all expectations. Everyone kept asking where it was from!"</p>
+                <p class="testimonial-author">— Michael Chen</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <p class="testimonial-text">"Raja Homemade Cakes is my go-to for all events. Their cupcakes are legendary in our office. Consistently perfect every single time."</p>
+                <p class="testimonial-author">— Jessica Thompson</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+        <div class="section-header">
+            <h2>Inspiration Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Gallery 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Gallery 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Gallery 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>How far in advance should I order?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">We recommend ordering at least 2-3 days in advance for our regular cakes. For custom designs and wedding cakes, please order at least 2 weeks ahead to ensure the best quality and attention to detail.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Do you offer gluten-free or vegan options?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Yes! We offer delicious gluten-free and vegan cake options. Please mention your dietary preferences when placing your order, and our bakers will create a wonderful alternative that doesn't compromise on taste.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>What are your delivery areas?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">We deliver within a 15-mile radius of our bakery location. For custom orders and special requests, we may arrange special delivery. Please contact us to confirm your delivery area.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" title="Chat on WhatsApp">💬</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Raja Homemade Cakes</h3>
+                <p>Creating sweet moments through artisanal craftsmanship since 2024.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>123 Bakery Lane<br>Confectionery City, SW1 2EE</p>
+                <p><strong>Opening Hours</strong></p>
+                <p>Mon-Sat: 8am - 7pm<br>Sun: 10am - 4pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Get sweet recipes and news.</p>
+                <div style="display: flex; gap: 8px; margin-top: 12px;">
+                    <input type="email" placeholder="your@email.com" style="flex: 1; padding: 10px; border: none; border-radius: 8px;">
+                    <button style="background: var(--color-secondary); color: white; border: none; border-radius: 8px; padding: 10px 16px; cursor: pointer;">→</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-text">© 2024 Raja Homemade Cakes Artisanal Bakery. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // Form Submission with Google Sheets Integration
+        async function submitForm(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const submitBtn = form.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+
+            // Get form values
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                cakeType: document.getElementById('cakeType').value,
+                date: document.getElementById('date').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            try {
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+
+                // Send data to Google Apps Script
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxwB8gWJn4dijsb58jjPzsm6Il7tzedayaVefbIbLG3TOHF1FjtpJe54oD700hK3KJf9w/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'no-cors'
+                });
+
+                // Show success message
+                showSuccessMessage('Thank you! Your inquiry has been submitted successfully. We will contact you soon!');
+
+                // Reset form
+                form.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+
+                // Log to console (for testing without Apps Script)
+                console.log('Form submitted with data:', formData);
+
+            } catch (error) {
+                console.error('Error:', error);
+                showSuccessMessage('Thank you! Your inquiry has been received. We will contact you soon!');
+                form.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Success Message Display
+        function showSuccessMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'success-message';
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+
+            setTimeout(() => {
+                messageDiv.classList.add('hide');
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 300);
+            }, 4000);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
